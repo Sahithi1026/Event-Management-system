@@ -1,0 +1,90 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Styles for the login page */
+body.login {
+    background-image: url('../static/images/login-background.jpg'); /* Path to your login background image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.login h2 {
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+form {
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background for form */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Button styling */
+button {
+    background-color: #28a745; /* Green button background */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Styles for all other pages */
+body:not(.login) {
+    background-image: url('../static/images/background.jpg'); /* Path to your other background image */
+    background-size: cover;
+    background-position: center;
+    color: #333; /* Text color */
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #333; /* Heading color */
+}
+
+/* Link styling */
+a {
+    color: #007bff; /* Link color */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* List styling */
+ul {
+    list-style-type: none; /* Remove bullet points */
+}
+
+li {
+    margin: 10px 0;
+}
