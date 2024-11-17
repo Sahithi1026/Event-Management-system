@@ -1,0 +1,20 @@
+<!-- events/templates/events/unregister_event.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unregister from Event</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Unregister from Event</h1>
+    <p>Are you sure you want to unregister from the event "{{ registration.event.event_details }}"?</p>
+    
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, Unregister</button>
+    </form>
+    <a href="{% url 'profile' %}">Cancel</a>
+</body>
+</html>

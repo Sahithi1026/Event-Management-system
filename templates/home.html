@@ -1,0 +1,27 @@
+<!-- events/templates/events/home.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Management - Home</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <h1>Upcoming Tech Events</h1>
+    <a href="{% url 'create_event' %}">Create an Event</a>
+    <ul>
+        {% for event in events %}
+            <li>
+                <h2>{{ event.event_details }}</h2>
+                <p><strong>College:</strong> {{ event.college_name }}</p>
+                <p><strong>Contact:</strong> {{ event.contact_info }}</p>
+                <p><strong>Details:</strong> {{ event.event_details }}</p>
+                <img src="{{ event.event_image.url }}" alt="{{ event.event_details }}" style="width: 200px; height: auto;">
+                <button href="{% url 'register_event' %}">Register</button>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

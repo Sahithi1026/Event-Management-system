@@ -1,0 +1,33 @@
+<!-- events/templates/events/profile.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Profile</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Your Profile</h1>
+    <h2>Registered Events</h2>
+    <ul>
+        {% for registration in registrations %}
+            <li>
+                <h3>{{ registration.event.event_details }}</h3>
+                <p>Registered by: {{ registration.student_name }}</p>
+                <p>College: {{ registration.student_college }}</p>
+                <p>Email: {{ registration.student_email }}</p>
+                <p>Participants: {{ registration.number_of_participants }}</p>
+                <p>Participants Emails: {{ registration.participants_emails }}</p>
+                <form method="post" action="{% url 'unregister_event' registration.id %}">
+                    {% csrf_token %}
+                    <button type="submit">Unregister</button>
+                </form>
+            </li>
+        {% empty %}
+            <li>No registered events found.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>
